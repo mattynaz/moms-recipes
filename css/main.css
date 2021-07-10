@@ -1,0 +1,155 @@
+:root {
+  --light-gray: #f9f9f9;
+  --shadow-color: #e8e8e8;
+  --main-text-color: #37352f;
+  --dark-text-color: black;
+  --accent-color: #ffec44;
+  --background-color: var(--light-gray);
+  --normal-font-family: 'Bona Nova';
+  font-size: 1.1rem;
+}
+
+* {
+  font-family: var(--normal-font-family);
+  color: var(--main-text-color);
+  font-size: 1rem;
+  transition-duration: 0.2s;
+  transition-property: none;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: var(--background-color);
+  overflow: hidden;
+}
+
+::selection {
+  color: var(--dark-text-color);
+  background: var(--accent-color);
+}
+
+aside {
+  width: 12rem;
+  min-width: 12rem;
+  background: white;
+  overflow: hidden;
+  padding: 1rem;
+  box-shadow: 0rem 0rem 5rem var(--shadow-color);
+}
+
+aside img {
+  display: block;
+  width: 55%;
+  margin: 2rem auto;
+  filter: brightness(0.1) invert(.18) sepia(.1) hue-rotate(10deg) saturate(200%);
+  user-select: none;
+}
+
+aside input, aside a {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+  margin: 0rem 0rem 0.5rem 0rem;
+  border-radius: 0.2rem;
+}
+
+aside input {
+  border: none;
+  outline: none;
+  background: var(--accent-color);
+  box-shadow: 0rem 0rem 0.075rem var(--shadow-color);
+  transition-property: background;
+  color: var(--dark-text-color);
+}
+
+aside input:focus {
+  background: var(--shadow-color);
+}
+
+aside input::placeholder {
+  color: var(--dark-text-color);
+}
+
+aside input:focus::placeholder {
+  color: transparent;
+}
+
+aside a {
+  text-decoration: none;
+  font-weight: bold;
+  background-size: 200% 100%;
+  background-image: linear-gradient(to left, var(--accent-color) 50%, transparent 50%);
+  transition-duration: 0.2s;
+  transition-property: background-position, color;
+}
+
+aside a:hover {
+  background-position: -100% 0%;
+  color: black;
+}
+
+main {
+  width: 100%;
+  min-width: 65rem;
+  overflow: scroll;
+  padding-top: 1rem;
+}
+
+zero-md {
+  width: 65rem;
+  margin: 0rem auto;
+  margin-bottom: 8rem;
+  border-radius: 0.5rem;
+  background: white;
+  box-shadow: 0rem 0rem 5rem var(--shadow-color);
+}
+
+zero-md:last-of-type {
+  margin-bottom: 4rem;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  html {
+    font-size: 1rem;
+  }
+
+  body {
+    flex-direction: column;
+    background: white;
+  }
+
+  main {
+    min-width: unset;
+    padding-top: 0rem;
+  }
+
+  aside {
+    min-width: unset;
+    width: 100%;
+    display: fixed;
+    height: 5rem;
+    min-height: 5rem;
+    padding: 0rem;
+    box-shadow: none;
+  }
+
+  aside input, aside a{
+    display: none;
+  }
+
+  aside img {
+    height: 100%;
+    margin: 0 auto
+  }
+
+  zero-md {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

@@ -1,72 +1,23 @@
 <head>
   <title>Recipes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="styles/page.css" rel="stylesheet">
-  <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
-  <script>
-    let RECIPES = []
 
-    window.ZeroMdConfig = {cssUrls: ['styles/markdown.css']}
+  <meta name='apple-mobile-web-app-capable' content='yes'>
+  <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>
+  <link rel='apple-touch-icon' href='img/touch-icon.png'>
+  
+  <link rel='icon' type='image/svg+xml' href='img/icon.svg'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  
+  <link href='https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&display=swap' rel='stylesheet'>
+  <link href='css/main.css' rel='stylesheet'>  
 
-
-    class Recipe {
-      constructor(recipe) {
-        this.name = recipe[0].trim()
-        this.id = recipe[1] ?? this.name
-        this.tags = recipe[2] ? recipe[2].split(',') : []
-        this.main_elem = document.createElement('zero-md')
-        this.main_elem.src = `recipes/${this.id}.md`
-        this.main_elem.id = this.id
-        this.aside_elem = document.createElement('a')
-        this.aside_elem.href = `#${this.main_elem.id}`
-        this.aside_elem.classList.add('recipe')
-        this.aside_elem.innerText = this.name
-      }
-
-      relates_to(search) {
-        search = search.toLowerCase()
-        return search === '' || this.name.toLowerCase().includes(search) || this.tags.some(tag => tag.toLowerCase().includes(search))
-      }
-
-      hide() {
-        this.main_elem.style.display = this.aside_elem.style.display = 'none'
-        console.log('hiding ', this.name)
-      }
-
-      show() {
-        this.main_elem.style.display = this.aside_elem.style.display = 'block'
-        console.log('showing ', this.name)
-      }
-    }
-
-    let init = recipes => {
-      recipes.forEach(recipe => {
-        recipe = new Recipe(recipe)
-        document.querySelector('main').append(recipe.main_elem)
-        document.querySelector('aside').append(recipe.aside_elem)
-        RECIPES.push(recipe)
-      })
-    }
-
-    fetch('recipes/published_recipes.md')
-      .then(response => response.text())
-      .then(text => [...text.matchAll(/# +([^\n]+)(?:\s*- +id: *([a-z]*))?(?:\s*- +tags: *([a-z, ]*))?/gi)])
-      .then(matches => matches.map(match => match.slice(1)))
-      .then(recipes => init(recipes))
-
-    filter_recipes = _ => {
-      search = document.querySelector('aside > input').value
-      RECIPES.filter(recipe => recipe.relates_to(search)).forEach(recipe => recipe.show())
-      RECIPES.filter(recipe => !recipe.relates_to(search)).forEach(recipe => recipe.hide())
-    }
-  </script>
+  <script type='module' src='https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js'></script>
+  <script src='js/main.js' defer></script>
 </head>
 <body>
   <aside>
-    <img src="https://image.flaticon.com/icons/png/512/193/193595.png">
-    <input type="text" placeholder='Name or tag...' onkeyup='filter_recipes()'>
+    <img src='img/icon.svg'>
+    <input type='text' placeholder='Search recipe ...' onkeyup='filter_recipes()'>
   </aside>
-  <main>
-  </main>  
+  <main></main>
 </body>
