@@ -5,12 +5,18 @@
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 ## Ingredients
-- **1** ripe Roma tomatoes, halved lengthwise
-- **2** teaspoon powdered sugar
-- **3** tablespoon kosher salt
-- **4** sprigs fresh oregano, stems off, chopped
-- **1/2** tablespoons extra-virgin olive oil
-- **3** tablespoons apple cider vinegar
+- **2tbs** olive oil
+- **2tsp** apple cider vinegar
+- **1** pinch of salt
+- **1** egg
+- **2tsp** yeast
+- **1tbs** honey
+- **¾ cup** water
+- **2.25 cups** of [Bob Mill's gluten free 1-to-1 flour](https://www.bobsredmill.com/gluten-free-1-to-1-baking-flour.html)
+- **3** cloves of garlic
+- **1/4 cup** diced red onions
+- **1** can of tomato sauce
+
 
 ## Preparation
 1. Preheat oven to 375 F.
@@ -31,3 +37,19 @@ And those were all your ingredients. Put those on the side or refridgerate until
 
 ### Special thanks
 Thank you to Matthew my favorite son
+
+### Nutrition
+
+Since I know Michael is probably reading this, here are this pizza's breakdown:
+
+| Macros      | No Toppings   | With Cheese |
+| ----------- | ------------- | ----------- |
+| Calories    | `2110`        | `2110`      |
+| Fat         | `33g`         | `33g`       |
+| Sodium      | `1200mg`      | `1200mg`    |
+| Total Carbs | `287g`        | `287g`      |
+| (Fiber)     | `9g`          | `9g`        |
+| (Sugars)    | `17g`         | `17g`       |
+| Protein     | `24g`         | `24g`       |
+
+The entirety of the fat in the crust comes from the olive oil and egg and sugar from the honey.

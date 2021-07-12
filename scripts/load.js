@@ -1,4 +1,4 @@
-window.ZeroMdConfig = {cssUrls: ['css/markdown.css']}
+window.ZeroMdConfig = {cssUrls: ['styles/markdown.css']}
 
 const RECIPES = []
 
@@ -27,8 +27,8 @@ filter_recipes = _ => {
   RECIPES.forEach(recipe => recipe.relates_to(search) ? recipe.show() : recipe.hide())
 }
 
-fetch('recipes/published recipes.md')
+fetch('recipes/published_recipes.md')
   .then(response => response.text())
-  .then(text => [...text.matchAll(/# +([^\n]+)(?:\s*- id: *([a-z]*))?(?:\s*- tags: *([a-z, ]*))?/gi)])
+  .then(text => [...text.matchAll(/# ([^\n]+)(?:\s*- id: *([a-z]*))(?:\s*- tags: *([a-z\d, ]*))?/gi)])
   .then(matches => matches.map(match => match.slice(1)))
   .then(recipes => recipes.forEach(recipe => new Recipe(recipe)))

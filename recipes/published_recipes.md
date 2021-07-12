@@ -1,6 +1,6 @@
-# GF Pizza
+# Gluten Free Pizza
 - id: pizza
-- tags: gluten free, vegetarian
+- tags: gluten free, vegetarian, veggie, carbs
 
 # Cookies
 - id: cookies

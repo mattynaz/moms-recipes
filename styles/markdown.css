@@ -114,7 +114,32 @@ code {
   padding: 0.15rem 0.25rem;
   border-radius: 0.5rem;
   font-size: 1.1rem;
+  font-family: 'Roboto Mono';
 }
+
+a {
+  color: #33a7ff;
+  transition: 0.15s color;
+}
+
+a:hover {
+  color: #7dc7ff;
+}
+
+table {
+  font-size: inherit;
+  text-align: left;
+  margin: 1.25rem auto;
+  border-top: 0.15rem solid #37352f;
+  border-bottom: 0.15rem solid #37352f;
+  background: #fafafa;
+  border-spacing: 2rem 0.5rem;
+}
+
+/* th:not(:last-of-type), td:not(:last-of-type) {
+  padding-right: 2rem;
+} */
+
 
 @media only screen and (max-width: 768px) {
   .markdown-body {

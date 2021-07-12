@@ -13,7 +13,7 @@
   font-family: var(--normal-font-family);
   color: var(--main-text-color);
   font-size: 1rem;
-  transition-duration: 0.2s;
+  transition-duration: 0.15s;
   transition-property: none;
 }
 
@@ -71,7 +71,7 @@ aside input:focus {
 }
 
 aside input::placeholder {
-  color: var(--dark-text-color);
+  color: var(--main-text-color);
 }
 
 aside input:focus::placeholder {
@@ -83,7 +83,7 @@ aside a {
   font-weight: bold;
   background-size: 200% 100%;
   background-image: linear-gradient(to left, var(--accent-color) 50%, transparent 50%);
-  transition-duration: 0.2s;
+  transition-duration: 0.15s;
   transition-property: background-position, color;
 }
 
@@ -112,8 +112,13 @@ zero-md:last-of-type {
   margin-bottom: 4rem;
 }
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
+@media (max-width: 86.75rem) {
+  zero-md {
+    border-radius: 0rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
   html {
     font-size: 1rem;
   }
@@ -144,12 +149,14 @@ zero-md:last-of-type {
 
   aside img {
     height: 100%;
-    margin: 0 auto
+    width: unset;
+    margin: 0 auto;
   }
 
   zero-md {
     width: 100%;
     border-radius: 0;
     box-shadow: none;
+    margin-bottom: 4rem;
   }
 }
