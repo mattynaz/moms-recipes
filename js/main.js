@@ -17,24 +17,18 @@ class Recipe {
     document.querySelector('aside').append(this.aside_elem)
     RECIPES.push(this)
   }
-
-  relates_to = search => {
-    search = search.toLowerCase()
-    return search === '' || this.name.toLowerCase().includes(search) || this.tags.some(tag => tag.toLowerCase().includes(search))
-  }
-
-  hide = _ =>this.aside_elem.style.display = 'none'
+  relates_to = search => [...this.tags, this.name, ''].some(tag => tag.toLowerCase().includes(search.toLowerCase()))
+  hide = _ => this.aside_elem.style.display = 'none'
   show = _ => this.aside_elem.style.display = 'block'
 }
 
 filter_recipes = _ => {
-  search = document.querySelector('aside > input').value
-  RECIPES.filter(recipe => recipe.relates_to(search)).forEach(recipe => recipe.show())
-  RECIPES.filter(recipe => !recipe.relates_to(search)).forEach(recipe => recipe.hide())
+  search = document.querySelector('input').value
+  RECIPES.forEach(recipe => recipe.relates_to(search) ? recipe.show() : recipe.hide())
 }
 
 fetch('recipes/published recipes.md')
   .then(response => response.text())
-  .then(text => [...text.matchAll(/# +([^\n]+)(?:\s*- +id: *([a-z]*))?(?:\s*- +tags: *([a-z, ]*))?/gi)])
+  .then(text => [...text.matchAll(/# +([^\n]+)(?:\s*- id: *([a-z]*))?(?:\s*- tags: *([a-z, ]*))?/gi)])
   .then(matches => matches.map(match => match.slice(1)))
   .then(recipes => recipes.forEach(recipe => new Recipe(recipe)))
